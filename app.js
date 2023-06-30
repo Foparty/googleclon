@@ -43,7 +43,7 @@ const device = navigator.userAgent;
 
 if (device.includes('iPhone' || 'iPad')) {
 	rightNav.style.display = 'none';
-	sideMenu.style.display = 'block';
+	// sideMenu.style.display = 'block';
 }
 // if (device.includes('iPad')) {
 // 	rightNav.style.display = 'none';
