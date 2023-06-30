@@ -21,6 +21,8 @@
 	--footer-fg: #70757a;
 	--footer-border: 1px solid #dadce0;
 	--menus-bg: #fff;
+	--sidemenu-bg: #fff;
+	--sidemenu-background-bg: rgba(102, 102, 102, 0.85);
 }
 
 * {
@@ -50,6 +52,8 @@
 	--footer-fg: #9aa0a6;
 	--footer-border: 1px solid #3c4043;
 	--menus-bg: #2d2e30;
+	--sidemenu-bg: #202124;
+	--sidemenu-background-bg: rgba(13, 13, 14, 0.85);
 }
 
 body {
@@ -68,6 +72,7 @@ a {
 	color: inherit;
 	text-decoration: none;
 }
+
 a:hover {
 	text-decoration: underline;
 }
@@ -75,6 +80,7 @@ a:hover {
 img {
 	width: 100%;
 }
+
 /* --------------------------------------SITE STRUCTURE-------------------------------------- */
 
 .wrapper {
@@ -97,7 +103,7 @@ img {
 	font-size: 0.875rem;
 	line-height: 1.5rem;
 	position: relative;
-	z-index: 999;
+	z-index: 88;
 }
 
 .right-header {
@@ -160,6 +166,121 @@ img {
 
 /* -----------------------------END HEADER SECTION----------------------------- */
 
+/* -----------------------------HEADER just on mobile SECTION----------------------------- */
+
+.left-nav {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.close-hamburguer {
+	margin: 0.3rem;
+}
+
+.hamburguer,
+.close-hamburguer {
+	height: 2rem;
+	width: 2rem;
+	padding: 0.2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	cursor: pointer;
+}
+
+.hamburguer span,
+.close-hamburguer span {
+	display: block;
+	width: 1.3rem;
+	height: 0.1rem;
+	background: var(--fg);
+}
+
+.sidemenu-container {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateX(0%);
+	height: 100vh;
+	height: 100dvh;
+	width: 100%;
+	background-color: var(--sidemenu-background-bg);
+	z-index: 99;
+	animation: sideshow 0.3s ease-in-out;
+}
+.sidemenu-container.shown {
+	display: block;
+}
+
+@keyframes sideshow {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+	20% {
+		display: block;
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.sidemenu {
+	position: fixed;
+	width: 17rem;
+	height: 100%;
+	background-color: var(--sidemenu-bg);
+	animation: justside 0.3s ease-in-out;
+	animation-delay: 0.2s;
+}
+
+@keyframes justside {
+	0% {
+	}
+	100% {
+	}
+}
+
+.light .sidelogo-dark {
+	display: none;
+}
+
+.dark .sidelogo-ligh {
+	display: none;
+}
+
+.sidelogo {
+	margin: 1rem;
+	max-width: 8rem;
+}
+
+.sidemenu-btn {
+	margin: 0 1rem;
+	padding-block: 0.5rem;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1rem auto;
+
+	gap: 0.5rem;
+}
+
+.sidemenu-btn a:hover {
+	text-decoration: none;
+}
+
+.sideline {
+	width: 102%;
+	height: 1px;
+	background-color: var(--sidemenu-background-bg);
+	transform: translateX(-0.35rem);
+}
+
+/* -----------------------------END HEADER just on mobile SECTION----------------------------- */
+
 /* -----------------------------MAIN SECTION----------------------------- */
 
 .google-logo {
@@ -168,6 +289,7 @@ img {
 	height: calc(100% - 35rem);
 	align-items: flex-end;
 }
+
 .logo {
 	width: 17rem;
 	height: auto;
@@ -176,6 +298,7 @@ img {
 .light .dark-logo {
 	display: none;
 }
+
 .dark .light-logo {
 	display: none;
 }
@@ -222,6 +345,7 @@ img {
 	color: var(--fg);
 	padding: 0.2rem 1rem;
 }
+
 .search-input:focus,
 .search-input:active {
 	outline: none;
@@ -234,6 +358,7 @@ img {
 	color: var(--btn-clr);
 	padding: 0.5rem 1rem;
 }
+
 .lucky-btn:hover {
 	box-shadow: var(--btn-hover-shadow);
 	background-color: var(--btn-hover-bg);
@@ -255,6 +380,7 @@ img {
 .under-search span:hover {
 	text-decoration: underline;
 }
+
 /* -----------------------------END MAIN SECTION----------------------------- */
 
 /* -----------------------------FOOTER SECTION----------------------------- */
@@ -282,6 +408,7 @@ img {
 	flex-direction: column;
 	gap: 1rem;
 }
+
 .footer-primary > * {
 	display: flex;
 	justify-content: space-evenly;
@@ -293,6 +420,7 @@ img {
 	width: 100%;
 	border-bottom: var(--footer-border);
 }
+
 .footer-secondary > * {
 	padding-left: 2rem;
 }
@@ -351,6 +479,7 @@ img {
 .grid-obj small {
 	text-transform: capitalize;
 }
+
 /* ----------------------------- END HIDDEN MENUS----------------------------- */
 
 /* ----------------------------DARK THEME---------------------------- */
